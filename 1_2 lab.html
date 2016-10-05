@@ -1,0 +1,41 @@
+<script type="text/javascript"> 
+
+
+	function Teacher(name){ 
+		this.name = name; 
+	} 
+	function Student(name){ 
+		this.name = name; 
+	} 
+	function Group(name){ 
+		this.name = name; 
+		this.students = []; 
+		this.teacher =0; 
+
+	} 
+	function Admin (name){ 
+		this.name = name; 
+
+	this.createGroup = function(nameGroup, nameTeacher){ 
+		var group = new Group(nameGroup); 
+		var abiturients = ['Saida', 'Rashid']; 
+		var teacher = new Teacher(nameTeacher); 
+		group.teacher = teacher; 
+
+		for(i=0; i < abiturients.length; i++) { 
+		var student = new Student(abiturients[i]); 
+		group.students.push(student); 
+	} 
+
+		return group; 
+
+	} 
+
+} 
+
+var admin = new Admin("Sabina"); 
+
+
+console.log(admin.createGroup("GRUPPA", "Adilhan")); 
+
+</script>
